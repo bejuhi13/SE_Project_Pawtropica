@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Pawtropica</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center"> 
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center me-auto me-lg-0">
+        <img src="static/img/logo.png" alt="">
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      {%if status == "loggedin"%}
+        <a href="/logout"><i class="fa fa-hand-o-right" aria-hidden="true"></i>  LOGOUT</a></p>
+      {%else%}
+        <a class="btn-book-a-slot" href="{{url_for('login')}}">LOGIN</a>
+      {%endif%}
+      
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center section-bg">
+    <div class="container">
+      <div class="row justify-content-between gy-5">
+        <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+          <h2 data-aos="fade-up">Pawtropica<br>Best Pet Cafe in the city</h2>
+          <p data-aos="fade-up" data-aos-delay="100">Explore the most popular, up and coming pet cafe in namma Bengaluru with large playgrounds, groomings, good food (for humans and pets alike) and many other exciting experiences! Click to book a slot to spend some time with your favourite animals Or to leave the well-being of your pets in capable hands!</p>
+          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+            <a href="{{url_for('booking')}}" class="btn-book-a-slot">Book a Slot</a>
+          </div>
+        </div>
+        <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
+          <img src="static/img/hero-img.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>About Us</h2>
+          <p>Learn More <span>About Us</span></p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-5 position-relative about-img" style="background-image: url(static/img/about.jpg) ;" data-aos="fade-up" data-aos-delay="150">
+            <div class="call-us position-absolute">
+              <br><h4>Book a Table</h4>
+              <p>+91 94484 68972</p>
+            </div>
+          </div>
+          <div class="col-lg-6 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+            <div class="content ps-0 ps-lg-5">
+              <p class="fst-italic">
+                Providing safe boarding, exercise, swimming pools for your pets, and a stomach full of food for you
+              </p>
+              <ul>
+                <li><i class="bi bi-check2-all"></i> At Pawtropica, we love and care for your pets like they are our own and we know that they deserve the highest level of quality care.</li>
+                <li><i class="bi bi-check2-all"></i> For many pet parents, leaving their furry family member for the first time can be a stressful experience. But you needn't worry! Similar to a child's daycare, we provide recurring daycare for your pets, providing safe socialization and exercise.</li>
+                <li><i class="bi bi-check2-all"></i> You can also choose to be a Volunteer and spend time with pets at the cafe. They can serve as a source of fun and stress relief, an escape from the gruelling everyday life.</li>
+              </ul>
+              <p>
+                It is difficult to learn that your favorite pet cafe is full and not accepting walk-in customers for the time being. Why should you be disappointed?. You can get an assured booking if you initiate a reservation process.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+  
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Services</h2>
+          <p>The<span> services </span>we offer</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="chef-member">
+              <div class="member-img">
+                <img src="static/img/services/services-1.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>GROOMING AND SPA</h4>
+                <p>At Pawtropica, we provide pet grooming services so that you can both trust in the knowledge that your pet is getting spa-like care with the experts. Our caring team creates a relaxing environment for your dog in our modern spa facilities, which are designed to cater to the comfort of our furry guests.</p>
+              </div>
+            </div>
+          </div><!-- End services Member -->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="chef-member">
+              <div class="member-img">
+                <img src="static/img/services/services-2.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>BOARDING</h4>
+                <p>Going on vacation? Why not treat your dog to one as well? Our friendly and attentive team will do everything possible to ensure Wille feels like a home away from home for your pup. Whether you need to board your dog for an overnight stay, for the weekend, a holiday, or extended care, your dog will spend their days enjoying supervised open play with their best friends, and their nights enjoying restful sleep.</p>
+              </div>
+            </div>
+          </div><!-- End services Member -->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="chef-member">
+              <div class="member-img">
+                <img src="static/img/services/services-3.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>PAWTROPICAFÉ</h4>
+                <p>The place where dog lovers and coffee addicts can meet. If you love animals, the Pawtropica Cafe is about to become your new favorite joint in Bengaluru. Play with pups as you grab your coffee fix, or catch up with friends over lattes, snuggling bunnies. The Cafe offers a comfortable and friendly space for humans and pets to hang out with each other, away from overcrowded shelters.</p>
+              </div>
+            </div>
+          </div><!-- End services Member -->
+
+        </div>
+
+      </div>
+    </section><!-- End services Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>gallery</h2>
+          <p>Check <span>Our Gallery</span></p>
+        </div>
+
+        <div class="gallery-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="static/img/gallery/gallery-1.jpg"><img src="static/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="static/img/gallery/gallery-2.jpg"><img src="static/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="static/img/gallery/gallery-3.jpg"><img src="static/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="static/img/gallery/gallery-4.jpg"><img src="static/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="static/img/gallery/gallery-5.jpg"><img src="static/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="static/img/gallery/gallery-6.jpg"><img src="static/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="static/img/gallery/gallery-7.jpg"><img src="static/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="static/img/gallery/gallery-8.jpg"><img src="static/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="static/img/gallery/gallery-9.jpg"><img src="static/img/gallery/gallery-9.jpg" class="img-fluid" alt=""></a></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Need Help? <span>Contact Us</span></p>
+        </div>
+
+        <div class="mb-3">
+          <iframe style="border:0; width: 100%; height: 280px;" src="https://maps.google.com/maps?width=657&amp;height=400&amp;hl=en&amp;q=sarjapur&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"frameborder="3" allowfullscreen></iframe>
+        </div><!-- End Google Maps -->
+
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-map flex-shrink-0"></i>
+              <div>
+                <h3>Our Address</h3>
+                <p>Sarjapur Main Rd, Bengaluru, Karnataka 560035</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center">
+              <i class="icon bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>pawtropica@gmail.com</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+91 94484 68972</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-share flex-shrink-0"></i>
+              <div>
+                <h3>Opening Hours</h3>
+                <div><strong>Mon-Sun:</strong> 7AM - 21PM
+                </div>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div>
+            <h4>Address</h4>
+            <p>
+              Sarjapur Main Rd, Bengaluru <br>
+              Karnataka 560035<br>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Reservations</h4>
+            <p>
+              <strong>Phone:</strong> +91 94484 68972<br>
+              <strong>Email:</strong> pawtropica@gmail.com<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Opening Hours</h4>
+            <p>
+              <strong>Mon-Sun: 7AM</strong> - 21PM<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/aos/aos.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+
+</body>
+
+</html>

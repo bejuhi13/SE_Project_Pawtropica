@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Sign Up Page</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/register.css')}}">
+</head>
+<body>
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+			<span>
+				<a href="/"><img src="{{url_for('static', filename='img/logo.png')}}" width="300" /></a>
+				<p><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>  Click here to go to home page</p><br><br><br><br><br><br><br><br>
+			</span>
+			<span>
+				<p>Already have an account?<br> Click here to login<br>
+				<a href="/login"><i class="fa fa-hand-o-right" aria-hidden="true"></i>  LOGIN</a> 
+			</span>
+		</div>
+	</div>
+	
+	<div class="right">
+		<h5>Register</h5>
+		<br>
+		<div class="inputs">
+			<form action="" method="post">
+				<input type="text" placeholder="Username" name="username" value="{{
+					request.form.username }}">
+				<input type="text" placeholder="Email ID" name="email_id" value="{{
+						request.form.email_id }}">
+				<input type="password" placeholder="Password" name="password" value="{{
+							request.form.password }}">
+			<div class="msg">{{ msg }}</div>
+			<input class="btn-default" type="submit" value="Register">
+			</form>
+			  {% if error %}
+				<p class="error"><strong>Error:</strong> {{ error }}
+			  {% endif %}
+		</div>
+			
+			<br><br>
+	</div>
+</div>  
+</body>
+</html>
