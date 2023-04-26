@@ -21,11 +21,15 @@ SET time_zone = "+00:00";
 -- Database: `pawtropica`
 --
 
--- --------------------------------------------------------
+create database pawtropica;
+
+use pawtropica;
 
 --
 -- Table structure for table `bookings`
 --
+
+
 
 CREATE TABLE `bookings` (
   `booking_id` int(11) NOT NULL,
